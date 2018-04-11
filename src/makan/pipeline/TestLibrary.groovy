@@ -18,35 +18,15 @@ class TestLibrary extends AbstractLibrary implements Serializable {
             return 'error1'
         }
 
-        //return fileContent
-
         if (fileContent != null && !fileContent.empty) {
-            //return 'errorX0'
-
-            //echo "fileContent: $fileContent"
-
             fileContent.splitEachLine('=') { items ->
-                def pom0 = items[0]
-                def pom1 = items[1]
-                //echo "oneLine: $pom0 : $pom1"
+                def key = items[0]
+                def value = items[1]
 
-                //echo "$pom0".equalsIgnoreCase('version') // ovao vrati true
-
-                if("$pom0".equalsIgnoreCase('version')) {
-                    //echo "BINGO!!!!"
-                    return "$pom1"
+                if("$key".equalsIgnoreCase('version')) {
+                    return "$value"
                 }
             }
-
-
-            /*Arrays.asList(fileContent.split('\n')).each {
-                return 'errorX1'
-                try {
-                    return (it =~ /^\s*?version\s*?=\s*?(\d+\.\d+\.\d+-.?)/)[0][1]
-                } catch (IndexOutOfBoundsException e) {
-                    return 'error2'
-                }
-            }**/
         } else {
             return 'error3'
         }
