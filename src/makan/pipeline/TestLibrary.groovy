@@ -15,20 +15,17 @@ class TestLibrary extends AbstractLibrary implements Serializable {
         try {
             fileContent = steps.readFile encoding: 'UTF-8', file: PROPERTY_FILE
         } catch (NoSuchFileException e) {
-            return 'error1'
+            return 'NoSuchFileException'
         }
 
         if (fileContent != null && !fileContent.empty) {
             fileContent.splitEachLine('=') { items ->
-                def key = items[0]
-                def value = items[1]
-
-                if("$key".equalsIgnoreCase('version')) {
-                    return "$value"
+                if("$items[0]".equalsIgnoreCase('version')) {
+                    return "$items[1]"
                 }
             }
         } else {
-            return 'error3'
+            return ''
         }
     }
 }
