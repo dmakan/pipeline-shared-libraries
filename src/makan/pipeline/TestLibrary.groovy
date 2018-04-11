@@ -30,6 +30,8 @@ class TestLibrary extends AbstractLibrary implements Serializable {
                 def pom1 = items[1]
                 //echo "oneLine: $pom0 : $pom1"
 
+                echo "$pom0".equals("version")
+
                 if("$pom0".equals("version")) {
                     return "$pom1"
                 }
