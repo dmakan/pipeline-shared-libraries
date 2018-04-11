@@ -33,7 +33,7 @@ class TestLibrary extends AbstractLibrary implements Serializable {
                 //echo "$pom0".equalsIgnoreCase('version') // ovao vrati true
 
                 if("$pom0".equalsIgnoreCase('version')) {
-                    echo "BINGO!!!!"
+                    //echo "BINGO!!!!"
                     return "$pom1"
                 }
             }
