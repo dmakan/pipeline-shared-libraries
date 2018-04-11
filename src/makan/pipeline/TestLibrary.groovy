@@ -21,6 +21,7 @@ class TestLibrary extends AbstractLibrary implements Serializable {
         //return fileContent
 
         if (fileContent != null && !fileContent.empty) {
+            return 'errorX0'
             Arrays.asList(fileContent.split('\n')).each {
                 return 'errorX1'
                 try {
