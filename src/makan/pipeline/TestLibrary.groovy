@@ -26,7 +26,9 @@ class TestLibrary extends AbstractLibrary implements Serializable {
             //echo "fileContent: $fileContent"
 
             fileContent.splitEachLine('=') { items ->
-                echo "oneLine: $items[0] : $items[1]"
+                def pom0 = items[0]
+                def pom1 = items[1]
+                echo "oneLine: $pom0 : $pom1"
 
                 if(items[0].equals("version")) {
                     return items[1]
