@@ -47,8 +47,8 @@ class TestLibrary extends AbstractLibrary implements Serializable {
                     return 'error2'
                 }
             }**/
+        } else {
+            return 'error3'
         }
-
-        return 'error3'
     }
 }
