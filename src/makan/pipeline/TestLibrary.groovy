@@ -18,7 +18,7 @@ class TestLibrary extends AbstractLibrary implements Serializable {
             return 'error1'
         }
 
-        if (fileContent != null && fileContent.empty) {
+        if (fileContent != null && !fileContent.empty) {
             Arrays.asList(fileContent.split('\n')).each {
                 try {
                     return (it =~ /^\s*?version\s*?=\s*?(\d+\.\d+\.\d+-.?)/)[0][1]
