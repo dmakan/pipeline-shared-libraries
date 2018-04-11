@@ -23,7 +23,7 @@ class TestLibrary extends AbstractLibrary implements Serializable {
                 def key = items[0]
                 def value = items[1]
 
-                if("$items[0]".equalsIgnoreCase('version')) {
+                if("$key".equalsIgnoreCase('version')) {
                     return "$value"
                 }
             }
