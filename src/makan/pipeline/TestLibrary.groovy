@@ -20,8 +20,11 @@ class TestLibrary extends AbstractLibrary implements Serializable {
 
         if (fileContent != null && !fileContent.empty) {
             fileContent.splitEachLine('=') { items ->
+                def key = items[0]
+                def value = items[1]
+
                 if("$items[0]".equalsIgnoreCase('version')) {
-                    return "$items[1]"
+                    return "$value"
                 }
             }
         } else {
