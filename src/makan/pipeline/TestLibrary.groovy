@@ -15,7 +15,7 @@ class TestLibrary extends AbstractLibrary {
         try {
             fileContent = steps.readFile encoding: 'UTF-8', file: PROPERTY_FILE
         } catch (NoSuchFileException e) {
-            return ''
+            return 'error1'
         }
 
         if (fileContent != null && fileContent.empty) {
@@ -23,11 +23,11 @@ class TestLibrary extends AbstractLibrary {
                 try {
                     return (it =~ /^\s*?version\s*?=\s*?(\d+\.\d+\.\d+-.?)/)[0][1]
                 } catch (IndexOutOfBoundsException e) {
-                    return ''
+                    return 'error2'
                 }
             }
         }
 
-        return ''
+        return 'error3'
     }
 }
