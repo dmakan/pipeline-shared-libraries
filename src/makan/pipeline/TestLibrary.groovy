@@ -23,6 +23,8 @@ class TestLibrary extends AbstractLibrary implements Serializable {
         if (fileContent != null && !fileContent.empty) {
             //return 'errorX0'
 
+            echo "fileContent: $fileContent"
+
             fileContent.splitEachLine('=') { items ->
                 return "errorX1 $items[0] : $items[1]"
                 if(items[0].equals("version")) {
