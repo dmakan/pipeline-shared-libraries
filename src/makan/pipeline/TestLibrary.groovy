@@ -21,15 +21,23 @@ class TestLibrary extends AbstractLibrary implements Serializable {
         //return fileContent
 
         if (fileContent != null && !fileContent.empty) {
-            return 'errorX0'
-            Arrays.asList(fileContent.split('\n')).each {
+            //return 'errorX0'
+
+            fileContent.splitEachLine('=') { items ->
+                if(items[0].equals("version")) {
+                    return items[1]
+                }
+            }
+
+
+            /*Arrays.asList(fileContent.split('\n')).each {
                 return 'errorX1'
                 try {
                     return (it =~ /^\s*?version\s*?=\s*?(\d+\.\d+\.\d+-.?)/)[0][1]
                 } catch (IndexOutOfBoundsException e) {
                     return 'error2'
                 }
-            }
+            }**/
         }
 
         return 'error3'
