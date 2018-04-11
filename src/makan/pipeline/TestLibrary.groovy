@@ -28,10 +28,10 @@ class TestLibrary extends AbstractLibrary implements Serializable {
             fileContent.splitEachLine('=') { items ->
                 def pom0 = items[0]
                 def pom1 = items[1]
-                echo "oneLine: $pom0 : $pom1"
+                //echo "oneLine: $pom0 : $pom1"
 
-                if(items[0].equals("version")) {
-                    return items[1]
+                if(pom0.equals("version")) {
+                    return pom1
                 }
             }
 
