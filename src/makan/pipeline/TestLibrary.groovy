@@ -2,7 +2,7 @@ package makan.pipeline
 
 import java.nio.file.NoSuchFileException;
 
-class TestLibrary extends AbstractLibrary {
+class TestLibrary extends AbstractLibrary implements Serializable {
     private static final String PROPERTY_FILE = 'test.properties'
 
     TestLibrary(final script, final steps) {
