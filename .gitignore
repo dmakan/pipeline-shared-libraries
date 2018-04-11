@@ -1,0 +1,23 @@
+# ECLIPSE CONFIG
+.classpath
+.project
+.settings
+*/target/
+/bin
+
+# IDEA CONFIG
+.idea
+**/*.iml
+**/build
+.gradle
+
+# STS CONFIG
+.springBeans
+
+
+/log
+*.db
+/build/
+
+
+test.groovy
